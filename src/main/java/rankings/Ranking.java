@@ -21,11 +21,9 @@ abstract class Ranking {//pode transformar essa classe em abstract
     }
 
     // Método para ordenar (exemplo, você pode personalizar a lógica de ordenação conforme necessário)
-    public ArrayList<?> ordenar() {
-        // Aqui você pode implementar a lógica para ordenar os dados do ranking.
-        // Exemplo: retornar uma lista ordenada (substitua pelo seu tipo específico)
-        return new ArrayList<>();
-    }
+    abstract ArrayList<?> ordenar();
+        
+    
 
     // Métodos Getters e Setters
     public String getDataAtualizacao() {
