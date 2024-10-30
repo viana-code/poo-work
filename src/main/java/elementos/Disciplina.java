@@ -17,6 +17,9 @@ public class Disciplina {
         this.nome = nome;
         this.horas = horas;
     }
+    public Disciplina(String nome) {
+    	this.nome = nome;
+    }
 
     // Métodos Getters e Setters
     public String getNome() {

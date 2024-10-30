@@ -46,8 +46,16 @@ public class Turma {
     	this.provas = provas;
     	this.trabalhos = trabalhos;
 }
+    
 
-    // Métodos Getters e Setters
+    public Turma(int id, ArrayList<Aluno> alunos, Disciplina disciplina, Professor professor) {
+		this.id = id;
+		this.alunos = alunos;
+		this.disciplina = disciplina;
+		this.professor = professor;
+		
+	}
+	// Métodos Getters e Setters
     public int getId() {
         return id;
     }

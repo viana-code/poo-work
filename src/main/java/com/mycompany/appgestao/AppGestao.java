@@ -18,6 +18,7 @@ import elementos.Turma;
  */
 public class AppGestao {
 
+	
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -81,9 +82,19 @@ public class AppGestao {
             break;
             
         case 3:
-            System.out.println("Turmas cadastradas...");
-           
+        	System.out.println("Turmas cadastradas:");
+            if (turmasCadastradas.isEmpty()) {
+                System.out.println("Nenhuma turma cadastrada.");
+            } else {
+                for (Turma turma : turmasCadastradas) {
+                    System.out.println("Id da Turma: " + turma.getId());
+                    System.out.println("N de Alunos: " + turma.getAlunos().size());
+                    System.out.println("Professor: " + turma.getProfessor().getNome());
+                    
+                }
+            }
             break;
+           
         case 4:
         	
             System.out.print("Digite o ID do aluno: ");
@@ -196,9 +207,74 @@ public class AppGestao {
         	}
             
         case 7:
-            System.out.println("Exibindo Opções de Professor...");
-            // Código para exibir opções de professor
-            break;
+        	System.out.println("Selecione uma opção:");
+            System.out.println("1 - Cadastrar turma");
+            System.out.println("2 - Dar nota de prova/trabalho");
+            System.out.println("3 - Marcar aula");
+            System.out.println("4 - Lista de presenca");
+            System.out.println("0 - Voltar");
+
+            int opcaoProfessor = scanner.nextInt();
+            scanner.nextLine(); // Limpar buffer
+            switch(opcaoProfessor){
+            case 1:
+            	System.out.println("Informe o nome do professor para cadastrar a turma:");
+                String nomedoProfessor = scanner.nextLine();
+
+                // Buscar professor na lista de professores cadastrados
+                Professor professorEscolhido = null;
+                for (Professor professor : professoresCadastrados) {
+                    if (professor.getNome().equalsIgnoreCase(nomedoProfessor)) {
+                        professorEscolhido = professor;
+                        break;
+                    }
+                }
+
+                if (professorEscolhido == null) {
+                    System.out.println("Professor não encontrado. Operação cancelada.");
+                    break;
+                }
+
+                // Informar o ID da turma
+                System.out.print("Informe o ID da turma: ");
+                int idTurma = scanner.nextInt();
+                scanner.nextLine(); // Limpar buffer
+
+                // Adicionar alunos à turma
+                ArrayList<Aluno> alunos = new ArrayList<>();
+                System.out.print("Quantos alunos deseja adicionar à turma? ");
+                int numAlunos = scanner.nextInt();
+                scanner.nextLine(); // Limpar buffer
+
+                for (int i = 0; i < numAlunos; i++) {
+                    System.out.print("Informe o ID do aluno " + (i + 1) + ": ");
+                    int idAlunoTurma = scanner.nextInt();
+                    scanner.nextLine(); // Limpar buffer
+
+                    Aluno aluno = Aluno.encontrarAlunoPorId(alunosCadastrados, idAlunoTurma);
+                    if (aluno != null) {
+                      alunos.add(aluno);
+                    } else {
+                        System.out.println("Aluno com ID " + idAlunoTurma + " não encontrado.");
+                    }
+                }
+
+                // Informar a disciplina
+                System.out.print("Informe o nome da disciplina: ");
+                String nomeDisciplina = scanner.nextLine();
+                System.out.print("Informe a carga horária da disciplina: ");
+                int cargaHoraria = scanner.nextInt();
+                scanner.nextLine(); // Limpar buffer
+
+                Disciplina disciplina = new Disciplina(nomeDisciplina, cargaHoraria);
+                
+                // Criar e cadastrar a turma
+                Turma novaTurma = new Turma(idTurma, alunos, disciplina, professorEscolhido);
+                turmasCadastradas.add(novaTurma);
+                System.out.println("Turma cadastrada com sucesso!");
+                break;
+            
+            
         case 0:
             
             return;
@@ -208,8 +284,10 @@ public class AppGestao {
     }
 }
         
-        }
         
         
+        
+    
+}
     }
-
+}

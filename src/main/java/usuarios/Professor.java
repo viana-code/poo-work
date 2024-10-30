@@ -63,13 +63,15 @@ public class Professor extends Pessoa {
    
    
     public void cadastrarTurma(int idTurma, ArrayList<Aluno> alunos, Disciplina disciplina) {
-        
-        Chat novoChat = new Chat();//nao lembro como seria o chat entao criei aqui um chat pra turma qualquer coisa so remover;
+        Chat novoChat = new Chat();
         Turma novaTurma = new Turma(idTurma, alunos, this, disciplina, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), novoChat);
         
         turmas.add(novaTurma);
-        
-        System.out.println("Turma cadastrada com sucesso");
+        for (Aluno aluno : alunos) {
+            aluno.adicionarTurma(novaTurma);
+        }
+
+        System.out.println("Turma cadastrada com sucesso.");
     }
     public void adicionarConteudoAula(Turma turma, Aula aula) {
         turma.getAulas().add(aula); // Adiciona a aula a ser ministrada na turma
@@ -92,9 +94,18 @@ public class Professor extends Pessoa {
         }
         
     }
+    public void listadePresenca(Turma turma,Aluno aluno) {
+    	
+            if (turmas.contains(turma) && turma.getAlunos().contains(aluno)) {
+                aluno.adicionarFalta();
+                System.out.println("Falta registrada para o aluno " + aluno.getNome() + " na turma " + turma.getId());
+            } else {
+                System.out.println("Aluno n encontrado");
+            
+    }
    
-    
+  }
     
   
-    
 }
+
