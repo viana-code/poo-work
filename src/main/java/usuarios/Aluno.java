@@ -19,6 +19,7 @@ public class Aluno extends Pessoa {
     private Map<Disciplina, Integer> notasDisciplinas;
     private int faltas;
     private double nota;
+    private ArrayList<Turma> turmas;
     // Construtor
     public Aluno(int id, String nome, int idade, char sexo, String email, double nota, int faltas) {
         super(id, nome, idade, sexo, email); // Chama o construtor da classe super
@@ -31,6 +32,11 @@ public class Aluno extends Pessoa {
         this.cra = 0.0;
         this.notasDisciplinas = new HashMap<>();
     }
+    public Aluno(int id, String nome) {
+    	super(id,nome);
+        this.turmas = new ArrayList<>();
+    }
+    
 
 
     // Métodos Getters e Setters
@@ -52,6 +58,9 @@ public class Aluno extends Pessoa {
 
     public Map<Disciplina, Integer> getNotasDisciplinas() {
         return notasDisciplinas;
+    }
+    public ArrayList<Turma> getTurmas() {
+        return turmas;
     }
 
     public void setNotasDisciplinas(Map<Disciplina, Integer> notasDisciplinas) {
@@ -115,6 +124,11 @@ public class Aluno extends Pessoa {
             }
         }
         return null; 
+    }
+    public void adicionarTurma(Turma turma) {
+        if (!turmas.contains(turma)) {
+            turmas.add(turma);
+        }
     }
     
     

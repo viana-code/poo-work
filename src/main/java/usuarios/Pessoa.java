@@ -23,6 +23,10 @@ abstract class Pessoa {
         this.sexo = sexo;
         this.email = email;
     }
+    public Pessoa(int id,String nome) {
+    	this.id =id;
+    	this.nome = nome;
+    			}
 
     // Métodos Getters e Setters
     public int getId() {
