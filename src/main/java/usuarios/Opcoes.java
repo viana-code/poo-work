@@ -4,6 +4,8 @@
  */
 package usuarios;
 
+import com.mycompany.appgestao.LoginView;
+
 /**
  *
  * @author Usuario

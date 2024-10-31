@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package usuarios;
+import com.mycompany.appgestao.LoginView;
 import usuarios.Professor;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -20,6 +21,7 @@ public class CadastroProfessor extends javax.swing.JFrame {
     public CadastroProfessor() {
         initComponents();
         setTitle("Cadastro Professor");
+        setSize(500,500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       
     }
@@ -97,7 +99,7 @@ public class CadastroProfessor extends javax.swing.JFrame {
                     .addComponent(jSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jVoltarP, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +124,7 @@ public class CadastroProfessor extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCadastrarP, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jVoltarP, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -130,6 +132,7 @@ public class CadastroProfessor extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jIdProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jIdProfessorActionPerformed
@@ -142,6 +145,14 @@ public class CadastroProfessor extends javax.swing.JFrame {
             String nome = jNomeProfessor.getText();
             String email = jEmailProfessor.getText();
             String sexo = (String) jSexo.getSelectedItem(); 
+            
+            
+            if (id.isEmpty() || nome.isEmpty() || email.isEmpty() || sexo == null) {
+            JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos.");
+            return; 
+        }
+            
+            
             salvarCadastro(id,nome,email,sexo);
             Professor professor = new Professor();
             professor.setNome(nome);
@@ -149,6 +160,10 @@ public class CadastroProfessor extends javax.swing.JFrame {
             professor.setEmail(email);
             professor.setSexo(sexo);
             JOptionPane.showMessageDialog(null, "Cadastro Realizado com sucesso");
+            jEmailProfessor.setText("");
+            jIdProfessor.setText("");
+            jNomeProfessor.setText("");
+            jSexo.setSelectedIndex(0);
     }//GEN-LAST:event_jCadastrarPActionPerformed
 
     private void jVoltarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVoltarPActionPerformed
@@ -193,11 +208,11 @@ public class CadastroProfessor extends javax.swing.JFrame {
     private void salvarCadastro(String nome, String id, String email, String sexo) {
     
     
-    // Caminho do arquivo onde os cadastros serão salvos
-    String Arquivo = "C:\\Users\\Usuario\\Documents\\Usuarios.txt";
+    
+    String Arquivo = "Professores.txt";//vai ser salvo na pasta do projeto
 
     try (BufferedWriter escritor = new BufferedWriter(new FileWriter(Arquivo, true))) {
-        // Formata os dados do usuário para salvar em uma única linha
+        
         String linha = nome + "," + id + "," + email + "," + sexo;
         
         
