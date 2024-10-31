@@ -15,13 +15,14 @@ import elementos.Disciplina;
 import elementos.Turma;
 import elementos.Feedback;
 import elementos.Chat;
+import java.util.Scanner;
 public class Professor extends Pessoa {
     private ArrayList<Turma> turmas;
     private ArrayList<Feedback> feedback;
     private ArrayList<Disciplina> disciplinasMinistradas;
 
     // Construtor
-    public Professor(int id, String nome, int idade, char sexo, String email, 
+    public Professor(String id, String nome, int idade, String sexo, String email, 
                      ArrayList<Turma> turmas, ArrayList<Feedback> feedback, ArrayList<Disciplina> disciplinasMinistradas) {
         super(id, nome, idade, sexo, email);  // Chama o construtor da superclasse (Pessoa)
         this.turmas = turmas;
@@ -29,11 +30,19 @@ public class Professor extends Pessoa {
         this.disciplinasMinistradas = disciplinasMinistradas;
         
     }
-    public Professor(int id, String nome, int idade, char sexo, String email) {
+    public Professor(String id, String nome, int idade, String sexo, String email) {
         super(id, nome, idade, sexo, email);
         this.turmas = new ArrayList<>();
         this.feedback = new ArrayList<>();
         this.disciplinasMinistradas = new ArrayList<>();
+    }
+    
+   
+    
+    
+    ArrayList<Professor> professoresCadastrados = new ArrayList<>();
+
+    Professor() {
     }
 
     // Métodos Getters e Setters
@@ -60,6 +69,7 @@ public class Professor extends Pessoa {
     public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
         this.disciplinasMinistradas = disciplinas;
     }
+    
    
    
     public void cadastrarTurma(int idTurma, ArrayList<Aluno> alunos, Disciplina disciplina) {
