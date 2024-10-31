@@ -9,31 +9,34 @@ package usuarios;
  * @author vacin
  */
 abstract class Pessoa {
-    private int id;
+    private String id;
     private String nome;
     private int idade;
-    private char sexo;
+    private String sexo;
     private String email;
 
     // Construtor
-    public Pessoa(int id, String nome, int idade, char sexo, String email) {
+    public Pessoa(String id, String nome, int idade, String sexo, String email) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.sexo = sexo;
         this.email = email;
     }
-    public Pessoa(int id,String nome) {
+    public Pessoa(String id,String nome) {
     	this.id =id;
     	this.nome = nome;
     			}
+    public Pessoa(){
+        
+    }
 
     // Métodos Getters e Setters
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -53,10 +56,10 @@ abstract class Pessoa {
         this.idade = idade;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
-    public char setSexo(char sexo) {
+    public String setSexo(String sexo) {
     	this.sexo = sexo;
     	return sexo;
     }

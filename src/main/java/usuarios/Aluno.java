@@ -21,18 +21,14 @@ public class Aluno extends Pessoa {
     private double nota;
     private ArrayList<Turma> turmas;
     // Construtor
-    public Aluno(int id, String nome, int idade, char sexo, String email, double nota, int faltas) {
+    public Aluno(String id, String nome, int idade, String sexo, String email, double nota, int faltas) {
         super(id, nome, idade, sexo, email); // Chama o construtor da classe super
         this.nota = nota;
         this.faltas = faltas;
         this.notasDisciplinas = new HashMap<>(); 
     }
-    public Aluno() {
-        super(0, "", 0, ' ', ""); // Iniciando como "0's";
-        this.cra = 0.0;
-        this.notasDisciplinas = new HashMap<>();
-    }
-    public Aluno(int id, String nome) {
+    
+    public Aluno(String id, String nome) {
     	super(id,nome);
         this.turmas = new ArrayList<>();
     }
@@ -117,9 +113,9 @@ public class Aluno extends Pessoa {
     		leituraDisciplina.close();
     	}
     }
-    public static Aluno encontrarAlunoPorId(ArrayList<Aluno> alunos, int id) {
+    public static Aluno encontrarAlunoPorId(ArrayList<Aluno> alunos, String id) {
         for (Aluno aluno : alunos) {
-            if (aluno.getId() == id) {
+            if (aluno.getId().equals(id)) {
                 return aluno;
             }
         }
