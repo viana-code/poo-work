@@ -32,6 +32,10 @@ public class Aluno extends Pessoa {
     	super(id,nome);
         this.turmas = new ArrayList<>();
     }
+
+    Aluno() {
+        
+    }
     
 
 

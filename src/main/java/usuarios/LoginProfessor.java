@@ -4,6 +4,7 @@
  */
 package usuarios;
 
+import com.mycompany.appgestao.LoginView;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class LoginProfessor extends javax.swing.JFrame {
     }
 
     private boolean verificarLogin(String nome, String id) {
-    String arquivo = "C:\\Users\\Usuario\\Documents\\Usuarios.txt";  // Caminho do arquivo
+    String arquivo = "Professores.txt";  // Caminho do arquivo
 
     try (BufferedReader leitor = new BufferedReader(new FileReader(arquivo))) {
         String linha;
@@ -92,10 +93,9 @@ public class LoginProfessor extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonProfessorVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButtonLoginProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
-                        .addComponent(jNomeprof)
-                        .addComponent(jIdprof)))
+                    .addComponent(jButtonLoginProfessor, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                    .addComponent(jNomeprof)
+                    .addComponent(jIdprof))
                 .addContainerGap(251, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -117,6 +117,7 @@ public class LoginProfessor extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jNomeprofActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNomeprofActionPerformed
@@ -135,9 +136,14 @@ public class LoginProfessor extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Login realizado com sucesso!");
             new Opcoes().setVisible(true);
             dispose();
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Nome ou ID invalidos.");
+        }else if(id.isEmpty() || nome.isEmpty()){
+        JOptionPane.showMessageDialog(null, "Espaços em branco.");
+    }
+        
+         else {
+            {
+                JOptionPane.showMessageDialog(null, "Nome ou ID invalidos.");
+            }
         }
         
     }//GEN-LAST:event_jButtonLoginProfessorActionPerformed
