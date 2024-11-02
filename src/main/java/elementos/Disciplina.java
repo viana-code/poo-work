@@ -17,8 +17,13 @@ public class Disciplina {
         this.nome = nome;
         this.horas = horas;
     }
+    
     public Disciplina(String nome) {
     	this.nome = nome;
+    }
+
+    public Disciplina() {
+      
     }
 
     // Métodos Getters e Setters
@@ -40,6 +45,9 @@ public class Disciplina {
     @Override
     public String toString() {
         return "Disciplina: " + nome + ", Horas: " + horas;
+    }
+    public void cadastrarDisciplina(Disciplina disciplina){
+        
     }
   
 }

@@ -31,6 +31,20 @@ public class Aula {
         this.exercicio = exercicio;
     }
 
+    private Aula(String data, String tema, ArrayList<Aluno> alunosPresenca, ArrayList<Object> arrayList1, String materialTeorico, String exercicio, Disciplina disciplina) {
+        this.data = data;
+        this.tema = tema;
+        this.alunosPresenca=alunosPresenca;
+        this.materialTeorico = materialTeorico;
+        this.exercicio = exercicio;
+        
+        
+    }
+
+    Aula(String data, String tema, Disciplina disciplina, ArrayList<Object> arrayList, ArrayList<Object> arrayList0, String materialTeorico, String exercicio) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     // Métodos Getters e Setters
     public String getData() {
         return data;
@@ -79,29 +93,7 @@ public class Aula {
     public void setExercicio(String exercicio) {
         this.exercicio = exercicio;
     }
-    public void cadastrarAula() {//somente o professor podera chamar esse metodo
-        Scanner leituraAula = new Scanner(System.in);
-        
-        // data da aula
-        System.out.print("Digite a data da aula: ");
-        this.data =	leituraAula.nextLine();
-        
-        // tema
-        System.out.print("Digite o tema da aula: ");
-        this.tema = leituraAula.nextLine();// se for prova , digita prova
-       
-     
-        System.out.print("Material da aula: ");
-        this.materialTeorico = leituraAula.nextLine();
-        
-        
-        System.out.print("Exercicios para a aula: ");// se nao tiver nao digita nada
-        this.exercicio = leituraAula.nextLine();
-        
-
-
-        System.out.println("Aula cadastrada com sucesso!");
-    }
+    
     public void computarFaltas(ArrayList<Aluno> alunosCadastrados) {
         Scanner leitura = new Scanner(System.in);
 

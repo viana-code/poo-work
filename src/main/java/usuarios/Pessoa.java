@@ -30,6 +30,9 @@ abstract class Pessoa {
     public Pessoa(){
         
     }
+    public Pessoa(String nome){
+        this.nome = nome;
+    }
 
     // Métodos Getters e Setters
     public String getId() {
