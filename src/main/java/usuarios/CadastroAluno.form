@@ -6,7 +6,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -23,62 +23,45 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="label1" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                          <Component id="label2" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="label3" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                          <Component id="label4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jNomeAluno" min="-2" pref="139" max="-2" attributes="0"/>
-                          <Component id="jIdAluno" min="-2" pref="139" max="-2" attributes="0"/>
-                          <Component id="jEmailAluno" min="-2" pref="139" max="-2" attributes="0"/>
-                          <Component id="jSexoAluno" min="-2" pref="139" max="-2" attributes="0"/>
-                          <Component id="jCadastrarAluno" alignment="0" min="-2" pref="139" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
-                      <Component id="jVoltarCadastroAluno" min="-2" pref="87" max="-2" attributes="0"/>
-                  </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jLabel1" max="32767" attributes="0"/>
+                  <Component id="label1" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
+                  <Component id="label2" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="193" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jButton1" max="32767" attributes="0"/>
+                  <Component id="NomeAluno" max="32767" attributes="0"/>
+                  <Component id="IdAluno" alignment="0" max="32767" attributes="0"/>
+                  <Component id="IdTurma" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="308" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jIdAluno" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="label1" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="label1" min="-2" max="-2" attributes="0"/>
+                  <Component id="NomeAluno" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="label2" min="-2" max="-2" attributes="0"/>
-                  <Component id="jNomeAluno" min="-2" max="-2" attributes="0"/>
+                  <Component id="IdAluno" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jEmailAluno" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="IdTurma" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label4" min="-2" max="-2" attributes="0"/>
-                  <Component id="jSexoAluno" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jCadastrarAluno" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jVoltarCadastroAluno" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="58" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="199" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,59 +69,32 @@
   <SubComponents>
     <Component class="java.awt.Label" name="label1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="ID Aluno"/>
+        <Property name="text" type="java.lang.String" value="Nome"/>
       </Properties>
     </Component>
     <Component class="java.awt.Label" name="label2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nome"/>
+        <Property name="text" type="java.lang.String" value="ID do Aluno"/>
       </Properties>
     </Component>
-    <Component class="java.awt.Label" name="label3">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Email"/>
-      </Properties>
+    <Component class="javax.swing.JTextField" name="NomeAluno">
     </Component>
-    <Component class="java.awt.Label" name="label4">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Sexo"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jIdAluno">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jNomeAluno">
-    </Component>
-    <Component class="javax.swing.JTextField" name="jEmailAluno">
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jSexoAluno">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
-            <StringItem index="0" value="Selecionar"/>
-            <StringItem index="1" value="Masculino"/>
-            <StringItem index="2" value="Feminino"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="jCadastrarAluno">
+    <Component class="javax.swing.JButton" name="jButton1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cadastrar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCadastrarAlunoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jVoltarCadastroAluno">
+    <Component class="javax.swing.JTextField" name="IdAluno">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Voltar"/>
+        <Property name="text" type="java.lang.String" value="ID da Turma"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jVoltarCadastroAlunoActionPerformed"/>
-      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="IdTurma">
     </Component>
   </SubComponents>
 </Form>

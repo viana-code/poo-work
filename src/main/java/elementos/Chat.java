@@ -4,10 +4,6 @@
  */
 package elementos;
 
-/**
- *
- * @author vacin
- */
 import java.util.ArrayList;
 
 public class Chat {

@@ -16,6 +16,7 @@ import elementos.Turma;
 import elementos.Feedback;
 import elementos.Chat;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 public class Professor extends Pessoa {
     private ArrayList<Turma> turmas;
     private ArrayList<Feedback> feedback;
@@ -32,9 +33,7 @@ public class Professor extends Pessoa {
     }
     public Professor(String id, String nome, int idade, String sexo, String email) {
         super(id, nome, idade, sexo, email);
-        this.turmas = new ArrayList<>();
-        this.feedback = new ArrayList<>();
-        this.disciplinasMinistradas = new ArrayList<>();
+        
     }
     
    
@@ -42,8 +41,9 @@ public class Professor extends Pessoa {
     
     ArrayList<Professor> professoresCadastrados = new ArrayList<>();
 
-    Professor() {
-    }
+   public Professor(String nome){
+       super(nome);
+   }
 
     // Métodos Getters e Setters
     public ArrayList<Turma> getTurmas() {
@@ -69,52 +69,28 @@ public class Professor extends Pessoa {
     public void setDisciplinas(ArrayList<Disciplina> disciplinas) {
         this.disciplinasMinistradas = disciplinas;
     }
+    public void cadastrarProfessor(Professor professor,Disciplina disciplina){
+        if (professor.getDisciplinas() == null) {
+        professor.setDisciplinas(new ArrayList<>());
+        }
+        professor.getDisciplinas().add(disciplina);
+
+   
+        professoresCadastrados.add(professor);
+
+    
+    JOptionPane.showMessageDialog(null, "Professor cadastrado com sucesso: " + professor.getNome());
+    }
     
    
    
-    public void cadastrarTurma(int idTurma, ArrayList<Aluno> alunos, Disciplina disciplina) {
-        Chat novoChat = new Chat();
-        Turma novaTurma = new Turma(idTurma, alunos, this, disciplina, new ArrayList<>(), new ArrayList<>(), new ArrayList<>(), novoChat);
-        
-        turmas.add(novaTurma);
-        for (Aluno aluno : alunos) {
-            aluno.adicionarTurma(novaTurma);
-        }
+ 
 
-        System.out.println("Turma cadastrada com sucesso.");
-    }
-    public void adicionarConteudoAula(Turma turma, Aula aula) {
-        turma.getAulas().add(aula); // Adiciona a aula a ser ministrada na turma
-        System.out.println("Conteúdo da aula adicionado a turma " + turma.getId());
-    }
-    public void adicionarDisciplina(Disciplina disciplina) {
-        disciplinasMinistradas.add(disciplina);
-        System.out.println("Disciplina " + disciplina.getNome() + " adicionada ao professor " + getNome());
-    }
+ 
 
-    // para testar
-    public void exibirDisciplinas() {
-        if (disciplinasMinistradas.isEmpty()) {
-            System.out.println("O professor " + getNome() + " nao ministra nenhuma disciplna.");
-        } else {
-            System.out.println("Disciplinas ministradas pelo professor " + getNome() + ":");
-            for (Disciplina disciplina : disciplinasMinistradas) {
-                System.out.println(" " + disciplina.getNome());
-            }
-        }
-        
-    }
-    public void listadePresenca(Turma turma,Aluno aluno) {
-    	
-            if (turmas.contains(turma) && turma.getAlunos().contains(aluno)) {
-                aluno.adicionarFalta();
-                System.out.println("Falta registrada para o aluno " + aluno.getNome() + " na turma " + turma.getId());
-            } else {
-                System.out.println("Aluno n encontrado");
-            
-    }
-   
-  }
+    
+    
+    
     
   
 }

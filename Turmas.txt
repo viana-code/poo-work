@@ -1,0 +1,5 @@
+12345,19,14,Matematica,12
+123,19,20,AOC,12
+1234,Pedro,29,Matematica,20
+teste,teste,18,teste,20
+1234,Joao,29,Matematica,20
