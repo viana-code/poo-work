@@ -8,6 +8,7 @@ import elementos.CadastroTurma;
 import javax.swing.*;
 import usuarios.CadastroAluno;
 import usuarios.CadastroProfessor;
+import elementos.CadastroAula;
 
 /**
  *
@@ -52,6 +53,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cadastrar Aula");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Mensagem");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -143,23 +149,28 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new CadastroAluno();
-        dispose();
+        //dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void CadastroTurmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroTurmaActionPerformed
         new CadastroTurma();
-        dispose();
+        //dispose();
         
     }//GEN-LAST:event_CadastroTurmaActionPerformed
 
     private void CadastroProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroProfessorActionPerformed
         new CadastroProfessor();
-        dispose();
+        //dispose();
     }//GEN-LAST:event_CadastroProfessorActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new CadastroAula();
+        //dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

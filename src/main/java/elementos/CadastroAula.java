@@ -21,7 +21,7 @@ public class CadastroAula extends javax.swing.JFrame {
      */
     public CadastroAula() {
         initComponents();
-        setTitle("Cadastrar Aula");
+        setTitle("SIES - Cadastrar Aula");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -47,6 +47,7 @@ public class CadastroAula extends javax.swing.JFrame {
         CadastrarAula = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Disciplina = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,6 +67,8 @@ public class CadastroAula extends javax.swing.JFrame {
             }
         });
 
+        CadastrarAula.setBackground(new java.awt.Color(0, 153, 51));
+        CadastrarAula.setForeground(new java.awt.Color(255, 255, 255));
         CadastrarAula.setText("Cadastrar");
         CadastrarAula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +76,15 @@ public class CadastroAula extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel1.setText("Disciplina");
+
+        jButton1.setText("Voltar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,18 +95,21 @@ public class CadastroAula extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
                                 .addComponent(CadastrarAula)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE))
-                            .addComponent(Disciplina)))
+                                .addGap(41, 41, 41)
+                                .addComponent(jButton1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(Disciplina))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(DataCampo)
                             .addComponent(Tema)))
                     .addGroup(layout.createSequentialGroup()
@@ -106,7 +120,7 @@ public class CadastroAula extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Exercicio)
                             .addComponent(Material))))
-                .addGap(348, 348, 348))
+                .addGap(240, 240, 240))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,7 +146,9 @@ public class CadastroAula extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(Disciplina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(CadastrarAula)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CadastrarAula)
+                    .addComponent(jButton1))
                 .addContainerGap(146, Short.MAX_VALUE))
         );
 
@@ -172,6 +188,11 @@ public class CadastroAula extends javax.swing.JFrame {
     novaturma.cadastrarAula(data.toString(), tema, materialTeorico, exercicio,disciplina);
     }//GEN-LAST:event_CadastrarAulaActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        dispose();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -203,6 +224,7 @@ public class CadastroAula extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CadastroAula().setVisible(true);
+      
             }
         });
     }
@@ -214,6 +236,7 @@ public class CadastroAula extends javax.swing.JFrame {
     private javax.swing.JTextField Exercicio;
     private javax.swing.JTextField Material;
     private javax.swing.JTextField Tema;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private java.awt.Label label1;
     private java.awt.Label label2;
