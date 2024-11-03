@@ -1,0 +1,16 @@
+rankings\Ranking.class
+rankings\RankingProfessores.class
+com\mycompany\appgestao\AppGestao.class
+elementos\Aula.class
+elementos\Mensagem.class
+elementos\Trabalho.class
+elementos\Feedback.class
+elementos\Chat.class
+usuarios\Professor.class
+elementos\Prova.class
+rankings\RankingTurmas.class
+elementos\Turma.class
+usuarios\Aluno.class
+elementos\Disciplina.class
+rankings\RankingAlunos.class
+usuarios\Pessoa.class
