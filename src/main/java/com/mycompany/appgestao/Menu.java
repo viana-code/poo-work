@@ -24,6 +24,7 @@ public class Menu extends javax.swing.JFrame {
         setTitle("SIES - Sistema de Gestão Escolar - V.0.1");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
