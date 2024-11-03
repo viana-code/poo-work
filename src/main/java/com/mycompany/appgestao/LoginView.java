@@ -7,8 +7,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import usuarios.CadastroAluno;
 import usuarios.CadastroProfessor;
-import usuarios.LoginAluno;
-import usuarios.LoginProfessor;
 
 
 public class LoginView extends javax.swing.JFrame {
@@ -184,12 +182,10 @@ public class LoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCadastroProfessorActionPerformed
 
     private void jButtonAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAlunoActionPerformed
-        new LoginAluno();
         dispose();
     }//GEN-LAST:event_jButtonAlunoActionPerformed
 
     private void jButtonProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfessorActionPerformed
-        new LoginProfessor().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonProfessorActionPerformed
 
