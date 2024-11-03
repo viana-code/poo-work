@@ -21,7 +21,7 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
-        setTitle("Menu");
+        setTitle("SIES - Sistema de Gestão Escola - V.0.1");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

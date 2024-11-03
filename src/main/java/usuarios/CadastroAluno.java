@@ -19,7 +19,7 @@ public class CadastroAluno extends javax.swing.JFrame {
      */
     public CadastroAluno() {
         initComponents();
-        setTitle("Cadastrar Aluno Na Turma");
+        setTitle("SIES - Cadastrar Aluno Na Turma");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

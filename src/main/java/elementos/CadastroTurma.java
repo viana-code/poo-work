@@ -18,7 +18,7 @@ public class CadastroTurma extends javax.swing.JFrame {
   
     public CadastroTurma() {
         initComponents();
-        setTitle("Cadastro Turma");
+        setTitle("SIES - Cadastro de Turma");
         setSize(200,200);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
