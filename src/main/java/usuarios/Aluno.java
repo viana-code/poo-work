@@ -66,69 +66,11 @@ public class Aluno extends Pessoa {
     public void setNotasDisciplinas(Map<Disciplina, Integer> notasDisciplinas) {
         this.notasDisciplinas = notasDisciplinas;
     }
-    public double calculoCra(Map<Disciplina, Integer>notasDisciplinas){
-    	double calculonotas = 0.0;
-    	
-    	
-    	
-    	for(Map.Entry<Disciplina,Integer>entry: notasDisciplinas.entrySet()) {
-    		Disciplina disciplina = entry.getKey();
-    		int notas = entry.getValue();
-    		calculonotas +=notas;
-    	}
-    	int nDisciplinas = notasDisciplinas.size();
-    	if(nDisciplinas>0) {
-    		return calculonotas/nDisciplinas;
-    	}else {
-    		return 0.0;
-    	}
-    }
+    
     
    
-    public void verNota() {
-    	Scanner leituraDisciplina = new Scanner(System.in);
-    	try {
-    		boolean encontrada = false;
-    	
-        	System.out.println("Digite o nome da disciplina: ");
-        	String disciplina = leituraDisciplina.nextLine().trim();
-        	for(Map.Entry<Disciplina, Integer> entry : notasDisciplinas.entrySet()) {
-        		Disciplina disciplinaNome = entry.getKey();
-        		if(disciplinaNome.getNome().equalsIgnoreCase(disciplina)) {//ignorar letras maiusculas e minusculas
-        			int nota = entry.getValue();
-        			System.out.println("Sua nota : " + nota);
-        			encontrada = true;
-        			break;
-        		}
-        		
-        	
-        		
-        	}
-        	if(!encontrada) {
-        		System.out.println("Disciplina nao encontrada");
-        		
-        	}
-        	
-    	} catch (NullPointerException e) {
-    		System.out.println("Notas nao encontradas");
-    	} catch(Exception e) {
-    		System.out.println("Erro " + e.getMessage());
-    	} finally {
-    		leituraDisciplina.close();
-    	}
-    }
-    public static Aluno encontrarAlunoPorId(ArrayList<Aluno> alunos, String id) {
-        for (Aluno aluno : alunos) {
-            if (aluno.getId().equals(id)) {
-                return aluno;
-            }
-        }
-        return null; 
-    }
-    public void adicionarTurma(Turma turma) {
-        if (!turmas.contains(turma)) {
-            turmas.add(turma);
-        }
+    public static void cadastrarAluno(String id, String nome){
+        
     }
     
     

@@ -4,11 +4,9 @@
  */
 package usuarios;
 
-import com.mycompany.appgestao.LoginView;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import elementos.Turma;
 import javax.swing.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,11 +19,10 @@ public class CadastroAluno extends javax.swing.JFrame {
      */
     public CadastroAluno() {
         initComponents();
-        setTitle("Cadastro Aluno");
-        setSize(500,500);
+        setTitle("Cadastrar Aluno Na Turma");
+        setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,134 +35,89 @@ public class CadastroAluno extends javax.swing.JFrame {
 
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
-        label3 = new java.awt.Label();
-        label4 = new java.awt.Label();
-        jIdAluno = new javax.swing.JTextField();
-        jNomeAluno = new javax.swing.JTextField();
-        jEmailAluno = new javax.swing.JTextField();
-        jSexoAluno = new javax.swing.JComboBox<>();
-        jCadastrarAluno = new javax.swing.JButton();
-        jVoltarCadastroAluno = new javax.swing.JButton();
+        NomeAluno = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        IdAluno = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        IdTurma = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        label1.setText("ID Aluno");
+        label1.setText("Nome");
 
-        label2.setText("Nome");
+        label2.setText("ID do Aluno");
 
-        label3.setText("Email");
-
-        label4.setText("Sexo");
-
-        jSexoAluno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "Masculino", "Feminino" }));
-
-        jCadastrarAluno.setText("Cadastrar");
-        jCadastrarAluno.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Cadastrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCadastrarAlunoActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jVoltarCadastroAluno.setText("Voltar");
-        jVoltarCadastroAluno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jVoltarCadastroAlunoActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("ID da Turma");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jIdAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jEmailAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSexoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCadastrarAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(jVoltarCadastroAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(NomeAluno)
+                    .addComponent(IdAluno)
+                    .addComponent(IdTurma))
+                .addContainerGap(308, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jIdAluno, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jNomeAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(IdAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jEmailAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSexoAluno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jCadastrarAluno)
-                .addGap(18, 18, 18)
-                .addComponent(jVoltarCadastroAluno)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(IdTurma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(7, 7, 7)
+                .addComponent(jButton1)
+                .addContainerGap(199, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jVoltarCadastroAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVoltarCadastroAlunoActionPerformed
-        new LoginView().setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jVoltarCadastroAlunoActionPerformed
-
-    private void jCadastrarAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCadastrarAlunoActionPerformed
-         try {
-        String idaluno = jIdAluno.getText(); 
-        String nomealuno = jNomeAluno.getText();
-        String emailaluno = jEmailAluno.getText();
-        String sexoaluno = (String) jSexoAluno.getSelectedItem();
-
-        
-        if (idaluno.isEmpty() || nomealuno.isEmpty() || emailaluno.isEmpty() || sexoaluno == null) {
-            JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos.");
-            return; 
-        }
-
-        
-        salvarCadastroAluno(nomealuno, idaluno, emailaluno, sexoaluno);
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         
-        Aluno aluno = new Aluno();
-        aluno.setNome(nomealuno);
-        aluno.setId(idaluno);
-        aluno.setEmail(emailaluno);
-        aluno.setSexo(sexoaluno);
+        String idturma = IdTurma.getText();
+        Turma novaturma = Turma.obterTurma(idturma);
+        if (novaturma == null) {
+        JOptionPane.showMessageDialog(null, "Turma não encontrada.");
+        return; //se nao achar sai;
+    }
+        Aluno novoaluno = new Aluno();
+        if (NomeAluno.getText().isEmpty() || IdAluno.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos.");
+        return; 
+    }
+        novoaluno.setNome(NomeAluno.getText());
+        novoaluno.setId(IdAluno.getText());
         
-        JOptionPane.showMessageDialog(null, "Cadastro Realizado com sucesso");
-        jEmailAluno.setText("");
-        jIdAluno.setText("");
-        jNomeAluno.setText("");
-        jSexoAluno.setSelectedIndex(0);
-        } catch (Exception e) {
-        e.printStackTrace(); // procurando esse carai de erro
-        JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage());
-}
-    }//GEN-LAST:event_jCadastrarAlunoActionPerformed
+        novaturma.cadastrarAluno(novoaluno);
+        JOptionPane.showMessageDialog(null,"Aluno cadastro na turma");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,36 +153,14 @@ public class CadastroAluno extends javax.swing.JFrame {
             }
         });
     }
-    private void salvarCadastroAluno(String nome, String id, String email, String sexo) {
-    
-    
-   
-    String ArquivoAluno = "Alunos.txt";
-
-    try (BufferedWriter escritor = new BufferedWriter(new FileWriter(ArquivoAluno, true))) {
-        
-        String linha = nome + "," + id + "," + email + "," + sexo;
-        
-        
-        escritor.write(linha);
-        escritor.newLine();
-    } catch (IOException e) {
-        JOptionPane.showMessageDialog(null, "Erro ao salvar os dados: " + e.getMessage());
-    }
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jCadastrarAluno;
-    private javax.swing.JTextField jEmailAluno;
-    private javax.swing.JTextField jIdAluno;
-    private javax.swing.JTextField jNomeAluno;
-    private javax.swing.JComboBox<String> jSexoAluno;
-    private javax.swing.JButton jVoltarCadastroAluno;
+    private javax.swing.JTextField IdAluno;
+    private javax.swing.JTextField IdTurma;
+    private javax.swing.JTextField NomeAluno;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private java.awt.Label label1;
     private java.awt.Label label2;
-    private java.awt.Label label3;
-    private java.awt.Label label4;
     // End of variables declaration//GEN-END:variables
-
-    
 }

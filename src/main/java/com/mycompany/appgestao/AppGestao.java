@@ -6,8 +6,8 @@ package com.mycompany.appgestao;
 
 public class AppGestao {
      public static void main(String[] args) {
-        // Inicia a tela de login
-        new LoginView().setVisible(true);
+       new Menu();
+        
     }
     
 }
