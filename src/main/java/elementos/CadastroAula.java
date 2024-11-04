@@ -50,6 +50,7 @@ public class CadastroAula extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
 
         label1.setText("Data");
@@ -61,6 +62,11 @@ public class CadastroAula extends javax.swing.JFrame {
         label4.setText("Exercicios");
 
         DataCampo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        DataCampo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DataCampoActionPerformed(evt);
+            }
+        });
 
         Material.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +85,12 @@ public class CadastroAula extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         jLabel1.setText("Disciplina");
+
+        Disciplina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DisciplinaActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(204, 0, 0));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,13 +116,13 @@ public class CadastroAula extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(CadastrarAula)
                                 .addGap(41, 41, 41)
                                 .addComponent(jButton1))
-                            .addComponent(Disciplina, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Disciplina, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -203,6 +215,14 @@ public class CadastroAula extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void DisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DisciplinaActionPerformed
+
+    private void DataCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DataCampoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DataCampoActionPerformed
 
     /**
      * @param args the command line arguments
